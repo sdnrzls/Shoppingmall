@@ -49,6 +49,7 @@ public class SearchAction extends HttpServlet {
 				obj.put("explanation", dto.getExplanation());
 				obj.put("price", dto.getPrice());
 				obj.put("inventory", dto.getInventory());
+				obj.put("uploadfile", dto.getUploadfile());
 				jarr.add(obj);
 			}
 			

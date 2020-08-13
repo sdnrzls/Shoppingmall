@@ -2,18 +2,26 @@ package com.product.model;
 
 public class Product {
 	
-	private String productid;
+	private int productid;
 	private int producttype;
 	private String productname;
 	private String explanation;
 	private int price;
 	private int inventory;
+	private String uploadfile;
 	
 	
-	public String getProductid() {
-		return productid == null ? "" : productid.trim();
+
+	public String getUploadfile() {
+		return uploadfile == null ? "" : uploadfile.trim();
 	}
-	public void setProductid(String productid) {
+	public void setUploadfile(String uploadfile) {
+		this.uploadfile = uploadfile;
+	}
+	public int getProductid() {
+		return productid;
+	}
+	public void setProductid(int productid) {
 		this.productid = productid;
 	}
 	public int getProducttype() {

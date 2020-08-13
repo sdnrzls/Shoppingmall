@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   <%@include file="../Main/header.jsp" %>
+	<%@include file="../Main/header.jsp" %>
    <%@ include file="../Main/side.jsp" %>
 
 
 <div class="col-lg-9">
 
 
-  <form action="register" method="post" id="frm">
+  <form action="register" method="post" id="frm" enctype="multipart/form-data">
 	
 	
     <div class="form-group">
@@ -36,6 +36,11 @@
       <input type="text" class="form-control" id="inventory" placeholder="Enter inventory" name="inventory">
     </div>
     
+    <div class="form-group">
+      <label for="uploadfile">uploadFile:</label>
+      <input type="file" class="form-control" id="uploadfile" placeholder="Enter inventory" name="uploadfile">
+    </div>
+
     
  <button  id="send"  class="btn btn-primary">Submit</button>
   </form>

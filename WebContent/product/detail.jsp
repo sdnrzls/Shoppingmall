@@ -43,6 +43,11 @@
       <input type="text" class="form-control" id="inventory" placeholder="Enter inventory" name="inventory" value="${dto.inventory }">
     </div>
     
+    <div class="form-group">
+      <label for="inventory">inventory:</label>
+      <input type="file" class="form-control" id="uploadFile" placeholder="Enter inventory" name="uploadFile" value="${dto.uploadfile }">
+    </div>
+    
     
   <input  type="submit"  id="update" class="btn btn-primary" value="update"></button>
   <input type="button" value="삭제" onclick="location.href='delete?productid=${dto.productid}'">

@@ -33,12 +33,13 @@ public class UpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		Product product = new Product();
-		product.setProductid(request.getParameter("productid"));
+		product.setProductid(Integer.parseInt(request.getParameter("productid")));
 		product.setProducttype(Integer.parseInt(request.getParameter("producttype")));
 		product.setProductname(request.getParameter("productname"));
 		product.setExplanation(request.getParameter("explanation"));
 		product.setPrice(Integer.parseInt(request.getParameter("price")));
 		product.setInventory(Integer.parseInt(request.getParameter("inventory")));
+		product.setUploadfile(request.getParameter("uploadfile"));
 		ProductDAO dao = ProductDAO.getInstance();
 		dao.ProductUpdate(product);
 		response.sendRedirect("list");

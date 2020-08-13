@@ -33,13 +33,14 @@ public class ProductDAO {
 			
 			try {
 				con = getConnection();
-				String sql = "insert into shoppingproduct values(product_seq.nextval,?,?,?,?,?)";
+				String sql = "insert into shoppingproduct values(product_seq.nextval,?,?,?,?,?,?)";
 				ps=con.prepareStatement(sql);
 				ps.setInt(1, product.getProducttype());
 				ps.setString(2, product.getProductname());
 				ps.setString(3, product.getExplanation());
 				ps.setInt(4, product.getPrice());
 				ps.setInt(5, product.getInventory());
+				ps.setString(6, product.getUploadfile());
 				ps.executeUpdate();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -61,12 +62,13 @@ public class ProductDAO {
 				rs = st.executeQuery(sql);
 				while(rs.next()) {
 					Product dto = new Product();
-					dto.setProductid(rs.getString("productid"));
+					dto.setProductid(rs.getInt("productid"));
 					dto.setProducttype(rs.getInt("producttype"));
 					dto.setProductname(rs.getString("productname"));
 					dto.setExplanation(rs.getString("explanation"));
 					dto.setPrice(rs.getInt("price"));
 					dto.setInventory(rs.getInt("inventory"));
+					dto.setUploadfile(rs.getString("uploadfile"));
 					arr.add(dto);
 				}
 			} catch (Exception e) {
@@ -77,6 +79,7 @@ public class ProductDAO {
 			return arr;
 		}
 		
+	
 		//상품 목록 리스트
 		public ArrayList<Product> ProductList(int producttype) {
 			Connection con =null;
@@ -90,12 +93,13 @@ public class ProductDAO {
 				rs = st.executeQuery(sql);
 				while(rs.next()) {
 					Product dto = new Product();
-					dto.setProductid(rs.getString("productid"));
+					dto.setProductid(rs.getInt("productid"));
 					dto.setProducttype(rs.getInt("producttype"));
 					dto.setProductname(rs.getString("productname"));
 					dto.setExplanation(rs.getString("explanation"));
 					dto.setPrice(rs.getInt("price"));
 					dto.setInventory(rs.getInt("inventory"));
+					dto.setUploadfile(rs.getString("uploadfile"));
 					arr.add(dto);
 				}
 			} catch (Exception e) {
@@ -120,12 +124,13 @@ public class ProductDAO {
 				rs = st.executeQuery(sql);
 				while(rs.next()) {
 					Product dto = new Product();
-					dto.setProductid(rs.getString("productid"));
+					dto.setProductid(rs.getInt("productid"));
 					dto.setProducttype(rs.getInt("producttype"));
 					dto.setProductname(rs.getString("productname"));
 					dto.setExplanation(rs.getString("explanation"));
 					dto.setPrice(rs.getInt("price"));
 					dto.setInventory(rs.getInt("inventory"));
+					dto.setUploadfile(rs.getString("uploadfile"));
 					arr.add(dto);
 				}
 			} catch (Exception e) {
@@ -135,6 +140,7 @@ public class ProductDAO {
 			}
 			return arr;
 		}
+		
 		
 		//상품 갯수
 		public int ProductCount(String field, String word) {
@@ -176,12 +182,13 @@ public class ProductDAO {
 				rs = st.executeQuery(sql);
 				if(rs.next()) {
 					dto =new Product();			
-					dto.setProductid(rs.getString("productid"));
+					dto.setProductid(rs.getInt("productid"));
 					dto.setProducttype(rs.getInt("producttype"));
 					dto.setProductname(rs.getString("productname"));
 					dto.setExplanation(rs.getString("explanation"));
 					dto.setPrice(rs.getInt("price"));
 					dto.setInventory(rs.getInt("inventory"));
+					dto.setUploadfile(rs.getString("uploadfile"));
 				}
 			} catch (Exception e) {
 					e.printStackTrace();
@@ -198,7 +205,7 @@ public class ProductDAO {
 			try {
 				con =getConnection();
 				String sql = "update shoppingproduct"
-						+ " set producttype=?, productname=?, explanation=?, price=?, inventory=?"
+						+ " set producttype=?, productname=?, explanation=?, price=?, inventory=? uploadfile=?"
 						+ " where productid=? "; 
 				ps = con.prepareStatement(sql);
 				ps.setInt(1, product.getProducttype());
@@ -206,7 +213,9 @@ public class ProductDAO {
 				ps.setString(3, product.getExplanation());
 				ps.setInt(4, product.getPrice());
 				ps.setInt(5, product.getInventory());
-				ps.setString(6, product.getProductid());
+				ps.setString(6, product.getUploadfile());
+				ps.setInt(7, product.getProductid());
+				
 				ps.executeUpdate();
 			} catch (Exception e) {
 					e.printStackTrace();

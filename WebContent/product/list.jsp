@@ -8,6 +8,7 @@
 	<table class="table table-white table-hover">
 		<thead>
 		<tr>
+			<th>image</th>
 			<th>Product ID</th>
 			<th>Product Type</th>
 			<th>Product Name</th>
@@ -17,14 +18,16 @@
 		</tr>
 		</thead>
 		<tbody>
-	<c:forEach items="${arr}" var="board" >
+	<c:forEach items="${arr}" var="product" >
 	<tr>
-		<td>${board.productid}</td>
-		<td><a href="detail?productid=${board.productid }">${board.producttype}</a></td>
-		<td>${board.productname}</td>
-		<td>${board.explanation}</td>
-		<td>${board.price}</td>
-		<td>${board.inventory}</td>
+		<td><a href="detail?productid=${product.productid }">
+		<img src="/shoppingProject/image/${product.uploadfile}" width="100" height="100"></a></td>
+		<td>${product.productid}</td>
+		<td>${product.producttype}</td>
+		<td>${product.productname}</td>
+		<td>${product.explanation}</td>
+		<td>${product.price}</td>
+		<td>${product.inventory}</td>
 		</tr>
 		</c:forEach>
 	</tbody>
@@ -57,6 +60,7 @@
 				var htmlStr="";
 				$.each(data.searchArr,function(key,val){
 					htmlStr+="<tr>";
+					htmlStr+="<td>"+val.uploadfile+"</td>";
 					htmlStr+="<td>"+val.productid+"</td>";
 					htmlStr+="<td>"+val.producttype+"</td>";
 					htmlStr+="<td>"+val.productname+"</td>";

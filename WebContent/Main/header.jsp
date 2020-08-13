@@ -24,15 +24,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/shoppingProject/Main/join.jsp">Join</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Order</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My shopping</a>
-          </li>
+
   
 </c:when>
 <c:when test="${not empty sessionScope.user}">
@@ -52,7 +44,7 @@
 		          </li>
          </c:if>
          <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
+            <a class="nav-link" href="/shoppingProject/basket/basketlist">Cart</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Order</a>
