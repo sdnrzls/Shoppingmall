@@ -1,4 +1,4 @@
-package com.basket.action;
+package com.payment.action;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,19 +11,20 @@ import javax.servlet.http.HttpSession;
 import com.basket.model.Basket;
 import com.basket.model.BasketDAO;
 import com.member.model.User;
-
+import com.payment.model.Payment;
+import com.payment.model.PaymentDAO;
 
 /**
- * Servlet implementation class BasketInsertServlet
+ * Servlet implementation class PaymentInsertServlet
  */
-@WebServlet("/basket/insert")
-public class BasketInsertServlet extends HttpServlet {
+@WebServlet("/payment/paymentinsert")
+public class PaymentInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BasketInsertServlet() {
+    public PaymentInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +33,8 @@ public class BasketInsertServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -41,20 +43,24 @@ public class BasketInsertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
-		BasketDAO dao = BasketDAO.getInstance();
-		Basket basket = new Basket();
+		PaymentDAO dao = PaymentDAO.getInstance();
+		Payment payment = new Payment();
 		
 		HttpSession session = request.getSession(); // 技记积己
 		User suser = (User)session.getAttribute("user");//User俊 技记殿废
 	
-		basket.setUserid(suser.getUserid());// 技记汲沥
-		basket.setProductid(Integer.parseInt(request.getParameter("productid")));
-		basket.setNumbers(Integer.parseInt(request.getParameter("inventory")));
-		basket.setUploadfile(request.getParameter("uploadfile"));
-		basket.setPrice(Integer.parseInt(request.getParameter("price")));
+		payment.setUserid(suser.getUserid());// 技记汲沥
+		payment.setProductid(Integer.parseInt(request.getParameter("productid")));
+		payment.setNumbers(Integer.parseInt(request.getParameter("numbers")));
+		payment.setAddress(request.getParameter("address"));
+		payment.setphone(request.getParameter("phone"));
+		payment.setCreditcardnumber(request.getParameter("creditcardnumber"));
+		payment.setCreditcardpassword(request.getParameter("creditcardpassword"));
+		payment.setPrice(Integer.parseInt(request.getParameter("price")));
+		payment.setUploadfile(request.getParameter("uploadfile"));
 	
-		dao.Basketinsert(basket);
-		response.sendRedirect("basketlist");
+		dao.Paymentinsert(payment);
+		response.sendRedirect("paymentlist");
 	}
 
 }

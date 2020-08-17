@@ -64,3 +64,32 @@ $(document).ready(function() {
 
 });//document
 
+function del(userid) {
+	if(confirm("정말 삭제할까요?")){
+		$.getJSON("customerdel?userid="+userid,function(data){
+			var htmlStr="";
+			$.each(data.root, function(key,val){
+				htmlStr+="<tr>";
+				htmlStr+="<td>"+val.userid+"</td>";
+				htmlStr+="<td>"+val.username+"</td>";
+				htmlStr+="<td>"+val.gender+"</td>";
+				htmlStr+="<td>"+val.birthdate+"</td>";
+				htmlStr+="<td>"+val.phone+"</td>";
+				htmlStr+="<td>"+val.email+"</td>";
+				htmlStr+="<td>"+val.mode+"</td>";
+				if(val.mode=='일반회원'){
+					htmlStr+="<td onclick=del('"+val.userid+"'>삭제</td>";
+				}else{
+					htmlStr+="<td>Admin</td>";
+				}
+				htmlStr+="</tr>";
+			})
+			$("table tbody").html(htmlStr);
+			$("#cntspan").text(data.rootCount.count);
+		})
+}
+}	
+
+
+
+

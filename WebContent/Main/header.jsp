@@ -42,7 +42,13 @@
 		          <li class="nav-item">
 		            <a class="nav-link" href="/shoppingProject/product/register.jsp">product register</a>
 		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link" href="/shoppingProject/Main/customerlist">Customer List</a>
+		          </li>
          </c:if>
+         <li class="nav-item">
+            <a class="nav-link" href="/shoppingProject/Main/updateview.jsp?userid=${session.userid}">update</a>
+          </li>
          <li class="nav-item">
             <a class="nav-link" href="/shoppingProject/basket/basketlist">Cart</a>
           </li>

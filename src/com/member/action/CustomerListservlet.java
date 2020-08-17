@@ -1,7 +1,6 @@
-package com.basket.action;
+package com.member.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -10,25 +9,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.basket.model.Basket;
-import com.basket.model.BasketDAO;
+import com.member.model.UserDAO;
 import com.member.model.User;
 
 
-
 /**
- * Servlet implementation class BasketListServlet
+ * Servlet implementation class CustomerListservlet
  */
-@WebServlet("/basket/basketlist")
-public class BasketListServlet extends HttpServlet {
+@WebServlet("/Main/customerlist")
+public class CustomerListservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BasketListServlet() {
+    public CustomerListservlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,21 +34,14 @@ public class BasketListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		
-		BasketDAO dao = BasketDAO.getInstance();
+		UserDAO dao = UserDAO.getInstance();
+		ArrayList<User>arr =  dao.customerList();
 
-		
-		HttpSession session = request.getSession(); // 세션생성 가져오기
-		User user = (User)session.getAttribute("user");
-		
-		ArrayList<Basket> arr=dao.BasketList(user.getUserid());
-		request.setAttribute("arr", arr);
-			
-		RequestDispatcher rd =request.getRequestDispatcher("basketList.jsp");
+		request.setAttribute("arr", arr);//customer의 변수명으로 arr 담음
+
+		RequestDispatcher rd = request.getRequestDispatcher("customerlist.jsp");
 		rd.forward(request, response);
-		
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

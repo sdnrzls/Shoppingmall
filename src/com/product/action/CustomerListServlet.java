@@ -38,7 +38,7 @@ public class CustomerListServlet extends HttpServlet {
 		ArrayList<Product> arr=dao.ProductList(producttype);
 		request.setAttribute("arr", arr);
 		
-		RequestDispatcher rd =request.getRequestDispatcher("customerlist.jsp");
+		RequestDispatcher rd =request.getRequestDispatcher("customerlist2.jsp");
 		rd.forward(request, response);
 	}
 
