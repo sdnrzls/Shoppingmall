@@ -70,7 +70,7 @@
                 <h4 class="card-title">
                   <a href="#">멜란지 하이랜드 프린팅 반팔 티셔츠</a>
                 </h4>
-                <h5>$15000</h5>
+                <h5>$15,000</h5>
                 <p class="card-text">소프트한 분위기를 자아내는 멜란지 컬러 베이스의 하이앤드 프린팅 티셔츠 입니다</p>
               </div>
               <div class="card-footer">
@@ -87,7 +87,7 @@
                 <h4 class="card-title">
                   <a href="#">프리미엄 루즈벨트 오버 티셔츠</a>
                 </h4>
-                <h5>$16500</h5>
+                <h5>$16,500</h5>
                 <p class="card-text">브랜드 공장에서 제작되어 높은 퀄리티를 자랑하는 오버핏 반팔 티셔츠 입니다</p>
               </div>
               <div class="card-footer">
@@ -138,7 +138,7 @@
                 <h4 class="card-title">
                   <a href="#">디프 썸머 쓰리버튼 자켓</a>
                 </h4>
-                <h5>75000</h5>
+                <h5>75,000</h5>
                 <p class="card-text">깔끔한 쓰리버튼 디자인의 썸머 캐주얼 자켓 입니다</p>
               </div>
               <div class="card-footer">

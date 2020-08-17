@@ -16,14 +16,14 @@ import com.product.model.ProductDAO;
 /**
  * Servlet implementation class CustomerListServlet
  */
-@WebServlet("/product/customerlist")
-public class CustomerListServlet extends HttpServlet {
+@WebServlet("/product/productlist")
+public class ProductListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CustomerListServlet() {
+    public ProductListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,7 +38,7 @@ public class CustomerListServlet extends HttpServlet {
 		ArrayList<Product> arr=dao.ProductList(producttype);
 		request.setAttribute("arr", arr);
 		
-		RequestDispatcher rd =request.getRequestDispatcher("customerlist2.jsp");
+		RequestDispatcher rd =request.getRequestDispatcher("productlist.jsp");
 		rd.forward(request, response);
 	}
 

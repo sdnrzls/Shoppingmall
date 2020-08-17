@@ -23,11 +23,11 @@
         <div class="list-group">
         Category
           <ul class="list-group-item">
-          <li><a href="/shoppingProject/product/customerlist?producttype=${1}">Outerwear</a></li>
-          <li><a href="/shoppingProject/product/customerlist?producttype=${2}" >Tops</a></li>
-          <li><a href="/shoppingProject/product/customerlist?producttype=${3}" >Bottoms</a></li>
-          <li><a href="/shoppingProject/product/customerlist?producttype=${4}" >shoes</a></li>
-          <li><a href="/shoppingProject/product/customerlist?producttype=${5}" >Accessories</a></li>
+          <li><a href="/shoppingProject/product/productlist?producttype=${1}">Outerwear</a></li>
+          <li><a href="/shoppingProject/product/productlist?producttype=${2}" >Tops</a></li>
+          <li><a href="/shoppingProject/product/productlist?producttype=${3}" >Bottoms</a></li>
+          <li><a href="/shoppingProject/product/productlist?producttype=${4}" >shoes</a></li>
+          <li><a href="/shoppingProject/product/productlist?producttype=${5}" >Accessories</a></li>
           </ul>
           Community
           <ul class="list-group-item">

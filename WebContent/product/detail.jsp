@@ -12,10 +12,9 @@
     <div class="row">
 	    <div class="col">
 	
-	      <label for="productid"> product id:</label>
-	      <input type="text" class="form-control" id="productid" placeholder="Enter id" name="productid" value="${dto.productid }" >
-	    </div>
-    </div>
+	      
+	      <input type="text" class="form-control" id="productid" placeholder="Enter id" name="productid" hidden="${dto.productid }" >
+	
     
     <div class="form-group">
       <label for="producttype">product type:</label>
@@ -45,7 +44,7 @@
     
     <div class="form-group">
       <label for="inventory">inventory:</label>
-      <input type="file" class="form-control" id="uploadFile" placeholder="Enter inventory" name="uploadFile" value="${dto.uploadfile }">
+      <input type="file" class="form-control" id="uploadFile" placeholder="Enter uploadFile" name="uploadFile" value="${dto.uploadfile }">
     </div>
     
     

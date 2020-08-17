@@ -204,9 +204,10 @@ public class ProductDAO {
 			PreparedStatement ps =null;
 			try {
 				con =getConnection();
-				String sql = "update shoppingproduct"
-						+ " set producttype=?, productname=?, explanation=?, price=?, inventory=? uploadfile=?"
+				String sql = "update shoppingproduct set"
+						+ " producttype=?, productname=?, explanation=?, price=?, inventory=?, uploadfile=?"
 						+ " where productid=? "; 
+				
 				ps = con.prepareStatement(sql);
 				ps.setInt(1, product.getProducttype());
 				ps.setString(2, product.getProductname());
@@ -217,6 +218,7 @@ public class ProductDAO {
 				ps.setInt(7, product.getProductid());
 				
 				ps.executeUpdate();
+			
 			} catch (Exception e) {
 					e.printStackTrace();
 			}finally {
