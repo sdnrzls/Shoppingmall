@@ -10,8 +10,11 @@ $("#cartin").click(function(){
 	if(${empty sessionScope.user}){
 		alert("로그인 해주세요");
 		return false;
+	}else if(${not empty sessionScope.user}){
+		alert("장바구니에 성공적으로 담겼습니다");
 	}
-});//loginBtn
+
+}); // cartin
 });
 </script>
 
@@ -22,6 +25,7 @@ $("#cartin").click(function(){
             <td>
                 <img src="/shoppingProject/image/${dto.uploadfile}" width="600" height="500">
             </td>
+              
             <td>
                 <table  style="height: 500px; width: 400px;">
                     <tr align="center">
@@ -56,4 +60,16 @@ $("#cartin").click(function(){
             </td>
         </tr>
     </table>
+     <div id ="other">
+        <a href="/shoppingProject/product/detailview?productid=13">
+        <img src="/shoppingProject/image/0 (28).jpg" width="200" height="150"></a>
+        
+        <a href="/shoppingProject/product/detailview?productid=19">
+        <img src="/shoppingProject/image/0 (56).jpg" width="200" height="150" ></a>
+        
+       <a href="/shoppingProject/product/detailview?productid=34">
+       <img  src="/shoppingProject/image/0 (192).jpg" width="200" height="150"></a>
+        </div>  
     </div>
+    
+ 

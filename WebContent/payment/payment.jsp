@@ -18,6 +18,7 @@
 		</tr>
 		</thead>
 		<tbody>
+		<c:set var="gum" value="0" />
 	<c:forEach items="${arr}" var="payment" >
 	<tr>
 		<td>
@@ -28,7 +29,12 @@
 		<td id="numbers">${payment.numbers}</td>
 		<td id="price">${payment.price}</td>
 		</tr>
+		<c:set var="gum" value="${payment.price}"/>
+		<c:set var="total" value="${total+gum}"/>
 		</c:forEach>
+		<tr>
+		<td>총금액:${total}</td>
+		</tr>
 	</tbody>
 	</table>
 </div>

@@ -32,7 +32,7 @@
 		<td>${basket.productid}</td>		
 		<td>${basket.numbers}</td>
 		<td>${basket.price}</td>
-		<td><a href="/shoppingProject/basket/basketdel?basketid=${basket.basketid}">삭제</a></td>
+		<td><a href="/shoppingProject/basket/basketdel?basketid=${basket.basketid}" >삭제</a></td>
 		</tr>
 		</c:forEach>
 	</tbody>
@@ -49,6 +49,7 @@
 </div>
 
 <script>
+
 function paycheck(){
 	var gsWin = window.open("about:blank", "winName", 'width=1280, height=650, left=0, top=0, location, menubar, scrollbars, resizable'); 
 	var frm = document.form;

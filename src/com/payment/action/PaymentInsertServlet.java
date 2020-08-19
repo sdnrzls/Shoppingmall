@@ -48,7 +48,8 @@ public class PaymentInsertServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession(); // 技记积己
 		User suser = (User)session.getAttribute("user");//User俊 技记殿废
-	
+		
+		
 		payment.setUserid(suser.getUserid());// 技记汲沥
 		payment.setProductid(Integer.parseInt(request.getParameter("productid")));
 		payment.setNumbers(Integer.parseInt(request.getParameter("numbers")));
